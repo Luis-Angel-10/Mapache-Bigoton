@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sucursales - Barbería El Mapache Bigotón</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <link rel="stylesheet" href="sucursales.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="barberia.html">
+        <img src="logo2.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
+        El Mapache Bigotón
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="barberia.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="barberos.html">Barberos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="sucursales.html">Sucursales</a></li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-primary text-white ms-2" href="citas.html">
+              <i class="fas fa-calendar-plus me-1"></i>Agendar Cita
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="container text-center text-white">
+      <h1 class="display-4 fw-bold mb-3" data-aos="fade-up">Nuestras Sucursales</h1>
+      <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+        Encuentra la sucursal más cercana de Barbería El Mapache Bigotón
+      </p>
+      <button class="btn btn-success btn-lg" onclick="abrirModalSucursal()" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-store me-2"></i>Agregar Sucursal
+      </button>
+    </div>
+  </section>
+
+  <!-- Lista de sucursales -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold"><i class="fas fa-store-alt me-2 text-primary"></i>Gestión de Sucursales</h2>
+        <button class="btn btn-outline-primary" onclick="cargarSucursales()">
+          <i class="fas fa-sync-alt me-1"></i>Actualizar
+        </button>
+      </div>
+
+      <div class="row" id="sucursales-container">
+        <div class="col-12 text-center text-muted">
+          <div class="spinner-border text-primary" role="status"></div>
+          <p class="mt-3">Cargando sucursales...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de creación/edición -->
+  <div class="modal fade" id="sucursalModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="sucursalModalLabel">Agregar Sucursal</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formSucursal">
+            <input type="hidden" id="sucursalId">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Nombre de la Sucursal</label>
+                <input type="text" id="nombre" class="form-control" required placeholder="Sucursal Centro">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Teléfono</label>
+                <input type="tel" id="telefono" class="form-control" placeholder="555-123-4567">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Dirección</label>
+              <input type="text" id="direccion" class="form-control" required placeholder="Av. Principal #123, Ciudad">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Horario</label>
+              <input type="text" id="horario" class="form-control" placeholder="Lunes a Sábado 9:00 - 19:00">
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="activa" checked>
+              <label class="form-check-label" for="activa">Sucursal activa</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button class="btn btn-primary" onclick="guardarSucursal()">
+            <i class="fas fa-save me-2"></i>Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p class="mb-0">&copy; 2025 Barbería El Mapache Bigotón. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sucursales.js"></script>
+</body>
+</html>

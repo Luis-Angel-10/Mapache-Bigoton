@@ -1,0 +1,98 @@
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --accent-color: #ffc107;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 0 80px;
+    margin-top: 76px;
+}
+
+.sucursal-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.sucursal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.sucursal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sucursal-header h5 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.sucursal-info p {
+    margin-bottom: 6px;
+    color: var(--secondary-color);
+}
+
+.btn-action {
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.btn-action:hover {
+    transform: scale(1.1);
+}
+
+.btn-edit {
+    background: linear-gradient(45deg, var(--primary-color), #0a58ca);
+    color: white;
+}
+
+.btn-delete {
+    background: linear-gradient(45deg, var(--danger-color), #c82333);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 100px 0 60px;
+        margin-top: 66px;
+    }
+
+    .sucursal-card {
+        margin-bottom: 20px;
+    }
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: white;
+}
